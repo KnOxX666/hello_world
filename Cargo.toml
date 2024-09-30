@@ -4,3 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[profile.release]
+opt-level = 3          # Optimization level (0-3, or "s" for size, "z" for even smaller)
+debug = false          # Include debug information (true or false)
+overflow-checks = false # Disable integer overflow checks for performance
+lto = true             # Enable Link Time Optimization
+codegen-units = 1      # Use a single codegen unit for better optimization (may increase compile time)
